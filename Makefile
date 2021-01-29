@@ -1,22 +1,28 @@
 ISTANBUL = node_modules/.bin/istanbul
 JSHINT = node_modules/.bin/jshint
-XYZ = node_modules/.bin/xyz --repo git@github.com:plaid/envvar.git
+NFMT = node_modules/.bin/nfmt
 
+.DEFAULT_GOAL := annoy
+
+.PHONY: annoy
+annoy:
+	$(MAKE) format lint test
+
+.PHONY: publish
+publish:
+	yarn publish
+
+.PHONY: format
+format:
+	$(NFMT)
 
 .PHONY: lint
 lint:
 	$(JSHINT) -- index.js test/index.js
 
-
-.PHONY: release-major release-minor release-patch
-release-major release-minor release-patch:
-	@$(XYZ) --increment $(@:release-%=%)
-
-
 .PHONY: setup
 setup:
-	npm install
-
+	yarn
 
 .PHONY: test
 test:

@@ -1,18 +1,17 @@
 {
-  "name": "envvar",
-  "version": "2.0.0",
-  "description": "Derive JavaScript values from environment variables",
+  "name": "spazio",
+  "version": "0.0.1",
+  "description": "Derive JavaScript values from environment variables, you can provide alternate sources for the envionment variables, defaults to process.env.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/plaid/envvar.git"
+    "url": "git://github.com/pre63/spazio.git"
   },
-  "dependencies": {},
   "devDependencies": {
     "istanbul": "0.4.x",
     "jshint": "2.9.x",
     "mocha": "2.x.x",
-    "xyz": "0.5.x"
+    "nfmt": "0.0.6"
   },
   "files": [
     "/README.md",
